@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: veeranna-portfolio
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: FRONTEND_ORIGIN
+        value: "*"
+      - key: SMTP_HOST
+        value: "smtp.gmail.com"
+      - key: SMTP_PORT
+        value: "587"
+      - key: SMTP_USERNAME
+        sync: false
+      - key: SMTP_PASSWORD
+        sync: false
+      - key: MAIL_TO
+        value: "veerannachowdarygoli46@gmail.com"

@@ -36,6 +36,7 @@ def init_db():
     c.commit()
     c.close()
 
+init_db()
 
 def send_enquiry_email(name, email, phone, subject, message):
     host = os.getenv("SMTP_HOST", "smtp.gmail.com")
